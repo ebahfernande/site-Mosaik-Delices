@@ -3,12 +3,8 @@ body {
 
     margin: 0;
 
-    header nav {
-        height: 10rem;
-        width: 100%;
-        background-color: rgba(255, 208, 0, 0.658);
-        position: relative;
-
+    header  {
+        
 
 
 
@@ -125,7 +121,7 @@ header .Welcome .button-contain a {
     font-style: oblique;
     text-decoration: none;
     color: rgb(251, 255, 0);
-    border: rgba(0, 0, 0, 0.801) 0.3rem solid;
+    border: rgba(0, 0, 0, 0.973) 0.3rem solid;
     padding: 0.6rem;
     background-color: black;
     border-radius: 2rem;
