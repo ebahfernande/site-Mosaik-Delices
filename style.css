@@ -10,15 +10,16 @@ body {
 
         img {
             padding-left: 2rem;
-            height: 5rem;
-            width: 5rem;
-            margin-left: 30%;
+            height: 8.5rem;
+            width: 8.5rem;
+            margin-left: 18%;
 
         }
 
-    }
+    } 
 
     background-color: beige;
+    background: linear-gradient(to radial,rgb(243, 245, 220));
 
     #localisaion .contact {
         font-family: 'Times New Roman', Times, serif;
@@ -31,7 +32,7 @@ body {
         color: black;
     }
 
-    #menu .btn {
+    .btn {
         font-family: 'Times New Roman', Times, serif;
         font-style: oblique;
         text-decoration: none;
@@ -40,12 +41,13 @@ body {
         border: black solid 1rem;
         color: yellow;
         background-color: black;
-        border-radius: 2rem;
+        border-radius: 3rem;
         font-size: 1.25rem;
         padding:0.01rem  1rem;
 
 
     }
+    
 
     #localisation .contact .contact-container{
        display: flex;
@@ -65,19 +67,22 @@ body {
         
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 0.6rem;
 
        .fa-whatsapp {
 
         color: chartreuse;
+        font-size: 1.6rem;
       }
 
       .fa-tiktok{
         color: black;
+        font-size: 1.5rem;
       }
 
       .fa-facebook{
         color: darkblue;
+        font-size: 1.5rem;
       }
 
 
@@ -85,10 +90,8 @@ body {
 
     } 
             
-        
-
+    
     }
-
 
     .menu-grid {
         display: grid;
@@ -97,23 +100,36 @@ body {
 
         gap: 1.25rem;
         /* espace entre les éléments */
+        margin: 1rem;
+
+    }
+    .menu-category h2{
+        margin-left: 10rem;
+        
+    }
+
+    .menu-category h2::before{
+        content:"✿";
+        font-size: 1.5rem;
+        color:rgba(91, 143, 7, 0.918);
+        
     }
 
     .menui {
         background: rgba(0, 0, 0, 0.808);
         padding: 0.6rem;
-        border-radius: 5rem;
+        border-radius:3rem;
         text-align: center;
         box-shadow: 0.1 0.5rem rgba(0, 0, 0, 0.1);
+        
     }
 
     .menui img {
         width: 100%;
-        height: 12rem;
+        height: 16rem;
         object-fit: cover;
-        border-radius: 6rem;
+        border-radius:3rem;
     }
-
 
 
 header .Welcome .button-contain a {
@@ -124,7 +140,7 @@ header .Welcome .button-contain a {
     border: rgba(0, 0, 0, 0.973) 0.3rem solid;
     padding: 0.6rem;
     background-color: black;
-    border-radius: 2rem;
+    border-radius: 3rem;
     font-size: 1.5rem;
     margin-left: 45%;
 }
@@ -151,6 +167,19 @@ h4 {
     color: rgba(255, 255, 0, 0.699);
 }
 
+section {
+  padding: 3rem 0.5rem;
+  margin-bottom: 2rem;
+}
+
+
+#menu .menu-category .menu-grid .menui  h4{
+        color: beige;
+        }
+
+        
+
+
 .Welcome {
 
     h2,
@@ -168,6 +197,18 @@ h4 {
 #menu #Faitesvotrechoix {
     text-align: center;
 }
+
+#menu #Faitesvotrechoix::before{
+    content:"────────── ";
+    color: black;
+} 
+
+#menu #Faitesvotrechoix::after{
+    content:" ──────────";
+    color: black;
+} 
+
+
 
 .info-localisation p {
     text-align: center;
@@ -195,18 +236,26 @@ header {
 
 
 
+
 /* Appliquer le beige au pied de page (footer) */
 footer,
 .footer {
-    background-color: #F5F5DC;
+    background-color: #F5F5DC; 
 
 }
+
 
 
 
 footer p {
     text-align: center;
     color: black;
+  
 
-
+}
+footer .jt {
+    padding-top: 10rem;
+}
+footer .slg {
+    padding-top: 4rem;
 }
