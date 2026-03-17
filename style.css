@@ -100,7 +100,7 @@ body {
 
     .menu-grid {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        grid-template-columns: repeat(4, 2fr);
         /* 4 colonnes égales */
 
         gap: 1.25rem;
@@ -154,13 +154,13 @@ header .Welcome .button-contain a {
 
 h2 {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 2em;
+    font-size: 2rem;
     font-style: oblique;
 }
 
 p {
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-style: oblique;
     color: rgba(255, 255, 0, 0.849);
 
@@ -238,6 +238,11 @@ header {
     background-position: center;
 }
 
+#localisation .photo-localisation img{
+    height: 22rem;
+    width: 55rem;
+}
+
 
 
 
@@ -264,87 +269,133 @@ footer .jt {
 footer .slg {
     padding-top: 4rem;
 }
-/* RESPONSIVITE TABLETTE */
-@media (max-width:1024px){
 
+
+
+/* TABLETTE */
+@media (max-width:64rem){
+
+/* Menu : 4 colonnes */
 .menu-grid{
-grid-template-columns: repeat(2,1fr);
+grid-template-columns: repeat(4,1fr);
 }
 
+/* Logo centré */
 header img{
-margin-left:0;
 display:block;
 margin:auto;
+height:7rem;
+width:7rem;
 }
 
+/* Titres */
 .menu-category h2{
 margin-left:2rem;
+font-size:1.8rem;
 }
 
+/* Bouton principal */
 .btn{
 display:block;
+width:60%;
 margin:2rem auto;
+text-align:center;
 }
 
-header .Welcome .button-contain a{
-display:inline-block;
-margin-left:0;
-}
-
-.map iframe{
-width:80%;
-height:200px;
-}
-
-}
-/* RESPONSIVITE TELEPHONE */
-
-@media (max-width:49rem){
-
-.menu-grid{
-grid-template-columns:2fr;
-}
-
-.menui img{
-height:auto;
-}
-
-.menu-category h2{
-margin-left:1rem;
-font-size:1.6rem;
-}
-
-header img{
-height:6rem;
-width:6rem;
-}
-
-header .Welcome h2{
-font-size:1.6rem;
-}
-
-.apropos{
-font-size:1.1rem;
-padding:0 1rem;
-}
-
+/* Bouton "Voir le menu" */
 header .Welcome .button-contain{
 text-align:center;
 }
 
 header .Welcome .button-contain a{
-font-size:1.2rem;
+display:inline-block;
+margin:1rem auto;
+}
+
+/* Map */
+.map iframe{
+width:90%;
+height:14rem;
+}
+
+/* Contacts */
+.contact-container{
+flex-wrap:wrap;
+justify-content:center;
+gap:1rem;
+}
+
+}
+
+
+/* TELEPHONE */
+@media (max-width:48rem){
+
+/* Menu : 4 colonne */
+.menu-grid{
+grid-template-columns:repeat(4,2fr);
+}
+
+/* Cartes menu */
+.menui{
+margin:0 auto;
+width:90%;
+}
+
+/* Images */
+.menui img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+/* Logo */
+header img{
+height:5rem;
+width:5rem;
+}
+
+/* Titre principal */
+header .Welcome h2{
+font-size:1.5rem;
+}
+
+/* Texte description */
+.apropos{
+font-size:1rem;
+padding:0 1rem;
+text-align:center;
+}
+
+/* Titre "Faites votre choix" */
+#menu #Faitesvotrechoix{
+font-size:1.5rem;
+text-align:center;
+padding:0 1rem;
+}
+
+/* Bouton "Voir le menu" */
+header .Welcome .button-contain{
+text-align:center;
+}
+
+header .Welcome .button-contain a{
+font-size:1.1rem;
 padding:0.5rem 1rem;
 }
 
+/* Bouton commander */
 .btn{
 display:block;
-width:80%;
-text-align:center;
+width:85%;
 margin:2rem auto;
-font-size:1.2rem;
+font-size:1.1rem;
+padding:0.7rem;
+text-align:center;
+border-radius:2rem;
 }
 
+/* Contacts en colonne */
 .contact-container{
 flex-direction:column;
 gap:1rem;
@@ -354,71 +405,19 @@ gap:1rem;
 justify-content:center;
 }
 
+/* Map pleine largeur */
 .map iframe{
 width:100%;
-height:13rem;
+height:15rem;
 }
 
+/* Footer */
 footer .jt{
-padding-top:3rem;
-}
-
-footer .slg{
 padding-top:2rem;
 }
 
-
-}img{
-max-width:100%;
-height:auto;
+footer .slg{
+padding-top:1.5rem;
 }
 
-@media (max-width:12.5rem){
-
-.menui img{
-width:100%;
-height:12.5rem;
-object-fit:cover;
-border-radius:2rem;
-}
-
-}
-
-    @media (max-width:48rem){
-
-#menu #Faitesvotrechoix{
-font-size:1.5rem;
-padding:0 1rem;
-text-align:center;
-}
-
-
-
-}
-@media (max-width:48rem){
-
-.btn{
-display:block;
-width:80%;
-margin:2rem auto;
-font-size:1.2rem;
-padding:0.7rem;
-text-align:center;
-border-radius:2rem;
-}
-
-}
-@media (max-width:48rem){
-
-header .Welcome .button-contain a{
-display:inline-block;
-margin:1rem auto;
-font-size:1.2rem;
-padding:0.5rem 1rem;
-}
-
-}
-img{
-max-width:100%;
-height:auto;
 }
