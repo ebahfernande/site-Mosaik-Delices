@@ -1,423 +1,264 @@
+/* --- CONFIGURATION GLOBALE --- */
 body {
-
-
     margin: 0;
-
-    header  {
-        
-
-
-
-        img {
-            padding-left: 2rem;
-            height: 8.5rem;
-            width: 8.5rem;
-            margin-left: 18%;
-
-        }
-
-    } 
-
+    padding: 0;
+    box-sizing: border-box;
     background-color: beige;
-    background: linear-gradient(to radial,rgb(243, 245, 220));
+    background: radial-gradient(circle, rgb(243, 245, 220), #f5f5dc);
+    font-family: 'Times New Roman', Times, serif;
+    overflow-x: hidden; /* Empêche le bug du défilement horizontal */
+    font-style: oblique;
+    font-size: 1.2rem;
+}
 
-    #localisaion .contact {
-        font-family: 'Times New Roman', Times, serif;
-        font-size: 1.5rem;
-        font-style: oblique;
-
-    }
-
-    #localisation .info-localisation p{
-        color: black;
-    }
-
-    .btn {
-        font-family: 'Times New Roman', Times, serif;
-        font-style: oblique;
-        text-decoration: none;
-        margin-left: 35rem;
-        margin-top: 10rem;
-        border: black solid 1rem;
-        color: yellow;
-        background-color: black;
-        border-radius: 3rem;
-        font-size: 1.25rem;
-        padding:0.01rem  1rem;
-
-
-    }
+/* --- HEADER & NAVIGATION --- */
+header {
+    background-image: url('images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg');
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 3rem;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     
+}
 
-    #localisation .contact .contact-container{
-       display: flex;
-       justify-content: space-around;
-       align-items: center;
+header nav {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0;
+}
 
-
-        p{
-        color: black;
-     }
-
-
-    } 
+header nav img {
+    height: 8.5rem;
+    width: 8.5rem;
+    object-fit: contain;
+   
     
+}
+
+/* --- SECTION BIENVENUE --- */
+.Welcome {
+    text-align: center;
+    padding: 2rem 1rem;
+    font-size:2rem ;
+}
+
+.Welcome h2 {
+    color: beige;
+    font-size:2.5rem;
+    margin-bottom: 1rem;
+}
+
+.Welcome .apropos {
+    color: beige;
+    font-size: 1.25rem;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
     
-    #localisation .contacti{
-        
-        display: flex;
-        align-items: center;
-        gap: 0.6rem;
+}
 
-       .fa-whatsapp {
-
-        color: chartreuse;
-        font-size: 1.6rem;
-      }
-
-      .fa-tiktok{
-        color: black;
-        font-size: 1.5rem;
-      }
-
-      .fa-facebook{
-        color: darkblue;
-        font-size: 1.5rem;
-      }
-
-      .fa-phone{
-        color: black;
-        font-size: 1.5rem;
-      }
-
-
-
-
-    } 
-            
-    
-    }
-
-    .menu-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 2fr);
-        /* 4 colonnes égales */
-
-        gap: 1.25rem;
-        /* espace entre les éléments */
-        margin: 1rem;
-
-    }
-    .menu-category h2{
-        margin-left: 10rem;
-        
-    }
-
-    .menu-category h2::before{
-        content:"✿";
-        font-size: 1.5rem;
-        color:rgba(91, 143, 7, 0.918);
-        
-    }
-
-    .menui {
-        background: rgba(0, 0, 0, 0.808);
-        padding: 0.6rem;
-        border-radius:3rem;
-        text-align: center;
-        box-shadow: 0.1 0.5rem rgba(0, 0, 0, 0.1);
-        
-    }
-
-    .menui img {
-        width: 100%;
-        height: 13rem;
-        object-fit: cover;
-        border-radius:3rem;
-    }
-
+/* Bouton "Voir le menu" */
+header .Welcome .button-contain {
+    margin-top: 2rem;
+}
 
 header .Welcome .button-contain a {
-
     font-style: oblique;
     text-decoration: none;
     color: rgb(251, 255, 0);
     border: rgba(0, 0, 0, 0.973) 0.3rem solid;
-    padding: 0.6rem;
+    padding: 0.8rem 1.5rem;
     background-color: black;
     border-radius: 3rem;
-    font-size: 1.5rem;
-    margin-left: 45%;
+    font-size: 1.3rem;
+    transition: 0.3s;
 }
 
-
-
-h2 {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 2rem;
-    font-style: oblique;
+/* --- LE MENU (GRILLE RESPONSIVE) --- */
+#menu {
+    padding: 2rem 1rem;
 }
-
-p {
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 1.5rem;
-    font-style: oblique;
-    color: rgba(255, 255, 0, 0.849);
-
-}
-
-.menu div .menu-category div .menu-grid div .menui p,
-h4 {
-    font-style: oblique;
-    color: rgba(255, 255, 0, 0.699);
-}
-
-section {
-  padding: 3rem 0.5rem;
-  margin-bottom: 2rem;
-}
-
-
-#menu .menu-category .menu-grid .menui  h4{
-        color: beige;
-        }
-
-        
-
-
-.Welcome {
-
-    h2,
-    .apropos {
-        text-align: center;
-        color: beige;
-    }
-}
-
-#menu .mj {
-    text-align: center;
-}
-
 
 #menu #Faitesvotrechoix {
     text-align: center;
+    margin-bottom: 3rem;
 }
 
-#menu #Faitesvotrechoix::before{
-    content:"────────── ";
-    color: black;
-} 
+/* Effet lignes de côté sur le titre */
+@media (min-width: 768px) {
+    #menu #Faitesvotrechoix::before { content: "────────── "; color: black; }
+    #menu #Faitesvotrechoix::after { content: " ──────────"; color: black; }
+}
 
-#menu #Faitesvotrechoix::after{
-    content:" ──────────";
-    color: black;
-} 
+.menu-category h2 {
+    margin-left: 5%;
+    color: #333;
+}
 
+.menu-category h2::before {
+    content: "✿ ";
+    font-size: 1.5rem;
+    color: rgba(91, 143, 7, 0.918);
+}
 
+.menu-grid {
+    display: grid;
+    /* Création automatique de colonnes : s'adapte tout seul de 1 à 4 colonnes */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 5%;
+}
 
-.info-localisation p {
+.menui {
+    background: rgba(0, 0, 0, 0.85);
+    padding: 1rem;
+    border-radius: 2rem;
     text-align: center;
-
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.menui img {
+    width: 100%;
+    height: 15rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+
+.menui p, .menui h4 {
+    color: rgba(255, 255, 0, 0.85);
+    font-style: oblique;
+    margin: 0.5rem 0;
+}
+
+.menui h4 {
+    color: beige;
+}
+
+/* --- BOUTON COMMANDER --- */
+.btn {
+    display: block; 
+    width: fit-content;
+    margin: 3rem auto; /* Centrage horizontal parfait */
+    font-family: 'Times New Roman', Times, serif;
+    font-style: oblique;
+    text-decoration: none;
+    color: yellow;
+    background-color: black;
+    border: black solid 0.5rem;
+    border-radius: 3rem;
+    font-size: 1.5rem;
+    padding: 0.8rem 2rem;
+    text-align: center;
+}
+
+/* --- LOCALISATION & MAP --- */
 #localisation {
     text-align: center;
+    padding: 2rem 1rem;
 }
 
-.map {
-    text-align: center;
+#localisation h2 {
+    margin-bottom: 1.5rem;
 }
 
-.contact {
-    text-align: center;
+#localisation .photo-localisation img {
+    width: 90%;
+    max-width: 800px;
+    height: auto;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
 }
 
-header {
-    background-image: url(images/WhatsApp\ Image\ 2026-03-04\ at\ 11.15.39.jpeg);
-    background-size: cover;
-    background-position: center;
-}
-
-#localisation .photo-localisation img{
-    height: 22rem;
-    width: 55rem;
-}
-
-
-
-
-
-/* Appliquer le beige au pied de page (footer) */
-footer,
-.footer {
-    background-color: #F5F5DC; 
-
-}
-
-
-
-
-footer p {
-    text-align: center;
+.info-localisation p {
     color: black;
-  
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+}
 
+.map iframe {
+    width: 90%;
+    max-width: 1000px;
+    height: 300px;
+    border-radius: 1rem;
 }
-footer .jt {
-    padding-top: 10rem;
+
+/* --- FOOTER & CONTACTS --- */
+footer {
+    background-color: #F5F5DC;
+    padding: 3rem 1rem;
+    margin-top: 3rem;
+    text-align: center;
 }
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap; /* Empile les contacts sur mobile */
+    justify-content: center;
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.contacti {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.contacti p {
+    color: black;
+    margin: 0;
+}
+
+/* Couleurs des icônes */
+.fa-whatsapp { color: chartreuse; font-size: 1.5rem; }
+.fa-tiktok { color: black; font-size: 1.5rem; }
+.fa-facebook { color: darkblue; font-size: 1.5rem; }
+.fa-phone { color: black; font-size: 1.4rem; }
+
 footer .slg {
-    padding-top: 4rem;
+    margin-top: 3rem;
+    font-weight: bold;
 }
 
-
-
-/* TABLETTE */
-@media (max-width:64rem){
-
-/* Menu : 4 colonnes */
-.menu-grid{
-grid-template-columns: repeat(4,1fr);
+footer .jt {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    opacity: 0.7;
 }
 
-/* Logo centré */
-header img{
-display:block;
-margin:auto;
-height:7rem;
-width:7rem;
-}
+/* --- MEDIA QUERIES (AJUSTEMENTS FINAUX) --- */
 
-/* Titres */
-.menu-category h2{
-margin-left:2rem;
-font-size:1.8rem;
-}
+/* Pour les tablettes et mobiles */
+@media (max-width: 768px) {
+    header nav img {
+        height: 6rem;
+        width: 6rem;
+    }
 
-/* Bouton principal */
-.btn{
-display:block;
-width:60%;
-margin:2rem auto;
-text-align:center;
-}
+    .Welcome h2 {
+        font-size: 1.8rem;
+    }
 
-/* Bouton "Voir le menu" */
-header .Welcome .button-contain{
-text-align:center;
-}
+    .Welcome .apropos {
+        font-size: 1.1rem;
+    }
 
-header .Welcome .button-contain a{
-display:inline-block;
-margin:1rem auto;
-}
+    .menu-category h2 {
+        text-align: center;
+        margin-left: 0;
+    }
 
-/* Map */
-.map iframe{
-width:90%;
-height:14rem;
-}
+    .btn {
+        width: 30%;
+        font-size: 1.2rem;
+    }
 
-/* Contacts */
-.contact-container{
-flex-wrap:wrap;
-justify-content:center;
-gap:1rem;
-}
-
-}
-
-
-/* TELEPHONE */
-@media (max-width:48rem){
-
-/* Menu : 4 colonne */
-.menu-grid{
-grid-template-columns:repeat(4,2fr);
-}
-
-/* Cartes menu */
-.menui{
-margin:0 auto;
-width:90%;
-}
-
-/* Images */
-.menui img{
-width:100%;
-height:200px;
-object-fit:cover;
-}
-
-/* Logo */
-header img{
-height:5rem;
-width:5rem;
-}
-
-/* Titre principal */
-header .Welcome h2{
-font-size:1.5rem;
-}
-
-/* Texte description */
-.apropos{
-font-size:1rem;
-padding:0 1rem;
-text-align:center;
-}
-
-/* Titre "Faites votre choix" */
-#menu #Faitesvotrechoix{
-font-size:1.5rem;
-text-align:center;
-padding:0 1rem;
-}
-
-/* Bouton "Voir le menu" */
-header .Welcome .button-contain{
-text-align:center;
-}
-
-header .Welcome .button-contain a{
-font-size:1.1rem;
-padding:0.5rem 1rem;
-}
-
-/* Bouton commander */
-.btn{
-display:block;
-width:85%;
-margin:2rem auto;
-font-size:1.1rem;
-padding:0.7rem;
-text-align:center;
-border-radius:2rem;
-}
-
-/* Contacts en colonne */
-.contact-container{
-flex-direction:column;
-gap:1rem;
-}
-
-.contacti{
-justify-content:center;
-}
-
-/* Map pleine largeur */
-.map iframe{
-width:100%;
-height:15rem;
-}
-
-/* Footer */
-footer .jt{
-padding-top:2rem;
-}
-
-footer .slg{
-padding-top:1.5rem;
-}
-
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
 }
