@@ -1,12 +1,15 @@
 /* --- CONFIGURATION GLOBALE --- */
-body {
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+}
+
+body {
     background-color: beige;
     background: radial-gradient(circle, rgb(243, 245, 220), #f5f5dc);
     font-family: 'Times New Roman', Times, serif;
-    overflow-x: hidden; /* Empêche le bug du défilement horizontal */
+    overflow-x: hidden;
     font-style: oblique;
     font-size: 1.2rem;
 }
@@ -21,7 +24,6 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    
 }
 
 header nav {
@@ -35,20 +37,18 @@ header nav img {
     height: 8.5rem;
     width: 8.5rem;
     object-fit: contain;
-   
-    
 }
 
 /* --- SECTION BIENVENUE --- */
 .Welcome {
     text-align: center;
     padding: 2rem 1rem;
-    font-size:2rem ;
+    font-size: 2rem;
 }
 
 .Welcome h2 {
     color: beige;
-    font-size:2.5rem;
+    font-size: 2.5rem;
     margin-bottom: 1rem;
 }
 
@@ -58,7 +58,6 @@ header nav img {
     max-width: 800px;
     margin: 0 auto 2rem auto;
     line-height: 1.6;
-    
 }
 
 /* Bouton "Voir le menu" */
@@ -78,6 +77,11 @@ header .Welcome .button-contain a {
     transition: 0.3s;
 }
 
+header .Welcome .button-contain a:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
+
 /* --- LE MENU (GRILLE RESPONSIVE) --- */
 #menu {
     padding: 2rem 1rem;
@@ -90,8 +94,14 @@ header .Welcome .button-contain a {
 
 /* Effet lignes de côté sur le titre */
 @media (min-width: 768px) {
-    #menu #Faitesvotrechoix::before { content: "────────── "; color: black; }
-    #menu #Faitesvotrechoix::after { content: " ──────────"; color: black; }
+    #menu #Faitesvotrechoix::before {
+        content: "────────── ";
+        color: black;
+    }
+    #menu #Faitesvotrechoix::after {
+        content: " ──────────";
+        color: black;
+    }
 }
 
 .menu-category h2 {
@@ -107,7 +117,6 @@ header .Welcome .button-contain a {
 
 .menu-grid {
     display: grid;
-    /* Création automatique de colonnes : s'adapte tout seul de 1 à 4 colonnes */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin: 2rem 5%;
@@ -119,6 +128,11 @@ header .Welcome .button-contain a {
     border-radius: 2rem;
     text-align: center;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.menui:hover {
+    transform: translateY(-5px);
 }
 
 .menui img {
@@ -128,7 +142,8 @@ header .Welcome .button-contain a {
     border-radius: 1.5rem;
 }
 
-.menui p, .menui h4 {
+.menui p,
+.menui h4 {
     color: rgba(255, 255, 0, 0.85);
     font-style: oblique;
     margin: 0.5rem 0;
@@ -138,11 +153,36 @@ header .Welcome .button-contain a {
     color: beige;
 }
 
+/* Style des boutons Ajouter/Validé générés par JS */
+.btn-add {
+    background: #ff9800;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    padding: 6px 14px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    margin-left: 12px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-add:hover {
+    transform: scale(1.05);
+}
+
+.btn-add.validated {
+    background: #2e7d32;
+}
+
 /* --- BOUTON COMMANDER --- */
 .btn {
-    display: block; 
+    display: block;
     width: fit-content;
-    margin: 3rem auto; /* Centrage horizontal parfait */
+    margin: 3rem auto;
     font-family: 'Times New Roman', Times, serif;
     font-style: oblique;
     text-decoration: none;
@@ -153,6 +193,12 @@ header .Welcome .button-contain a {
     font-size: 1.5rem;
     padding: 0.8rem 2rem;
     text-align: center;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
 }
 
 /* --- LOCALISATION & MAP --- */
@@ -196,7 +242,7 @@ footer {
 
 .contact-container {
     display: flex;
-    flex-wrap: wrap; /* Empile les contacts sur mobile */
+    flex-wrap: wrap;
     justify-content: center;
     gap: 2rem;
     margin: 2rem 0;
@@ -214,10 +260,42 @@ footer {
 }
 
 /* Couleurs des icônes */
-.fa-whatsapp { color: chartreuse; font-size: 1.5rem; }
-.fa-tiktok { color: black; font-size: 1.5rem; }
-.fa-facebook { color: darkblue; font-size: 1.5rem; }
-.fa-phone { color: black; font-size: 1.4rem; }
+.fa-whatsapp {
+    color: green;
+    font-size: 1.5rem;
+}
+
+.fa-tiktok {
+    color: black;
+    font-size: 1.5rem;
+}
+
+.fa-facebook {
+    color: darkblue;
+    font-size: 1.5rem;
+}
+
+.fa-phone {
+    color: black;
+    font-size: 1.3rem;
+}
+
+.btn-map {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #333;
+    color: rgb(73, 128, 0);
+    text-decoration: none;
+    border-radius: 1.5rem;
+    font-weight: bold;
+    margin-top: 10px;
+    transition: 0.3s;
+}
+
+.btn-map:hover {
+    background-color: rgba(255, 255, 0, 0.952);
+    transform: scale(1.05);
+}
 
 footer .slg {
     margin-top: 3rem;
@@ -230,10 +308,12 @@ footer .jt {
     opacity: 0.7;
 }
 
-/* --- MEDIA QUERIES (AJUSTEMENTS FINAUX) --- */
-
-/* Pour les tablettes et mobiles */
+/* --- MEDIA QUERIES (AJUSTEMENTS RESPONSIVE) --- */
 @media (max-width: 768px) {
+    body {
+        font-size: 1rem;
+    }
+
     header nav img {
         height: 6rem;
         width: 6rem;
@@ -253,12 +333,32 @@ footer .jt {
     }
 
     .btn {
-        width: 30%;
+        width: 80%;
         font-size: 1.2rem;
     }
 
     .contact-container {
         flex-direction: column;
         align-items: center;
+    }
+
+    .menui img {
+        height: 12rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .menu-grid {
+        margin: 1rem 2%;
+        gap: 1rem;
+    }
+
+    .menui {
+        padding: 0.8rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.6rem 1.5rem;
     }
 }

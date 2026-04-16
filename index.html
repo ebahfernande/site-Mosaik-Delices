@@ -3,346 +3,515 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Mosaik Délices - Restaurant en ligne</title>
+    <meta name="description" content="Chawarmas, plats ivoiriens et créations savoureuses - Commandez en ligne chez Mosaik Délices">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 </head>
 
 <body>
 
     <header>
-
         <nav>
-            <img src="images/IMG_9940 (1).PNG" alt="Mosaik Delices" />
-
-
+            <img src="images/IMG_9940 (1).PNG" alt="Mosaik Delices">
         </nav>
 
-
         <section class="Welcome">
-
-            <h2> Bienvenu chez Mosaik Delices</h2>
-            <p class="apropos"> Un restaurant en ligne moderne qui vous propose
-                principalement des Chawarmas ,<br>
-                des plats d attieke a l ivoirienne
-                et d autres creation culinaires savoureuses et fraiches.
+            <h2>Bienvenue chez Mosaik Délices</h2>
+            <p class="apropos">
+                Un restaurant en ligne moderne qui vous propose principalement des Chawarmas,<br>
+                des plats d'attieké à l'ivoirienne et d'autres créations culinaires savoureuses et fraîches.
             </p>
-
             <div class="button-contain">
                 <a href="#Faitesvotrechoix">Voir Le Menu</a>
             </div>
-
-
         </section>
     </header>
 
     <section id="menu">
+        <h2 class="menu-title" id="Faitesvotrechoix">Faites votre choix</h2>
 
-        
-
-        <h2 class="menu-title" id="Faitesvotrechoix">
-            Faites votre choix</h2>
-
-
+        <!-- Catégorie Fast-Food -->
         <div class="menu-category">
             <h2 class="titrerepas1">Fast-Food</h2>
-
             <div class="menu-grid">
-
-                <div class="menui">
+                <div class="menui" data-item-name="Chawarma Simple">
                     <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Chawarma simple">
-                    <p><strong>Chawarma Simple:</strong></p>
+                    <p><strong>Chawarma Simple :</strong></p>
                     <p>Viande de bœuf, frites, laitue,<br>sauce & piment (au choix)</p>
-                    <h4>Standard — 1500F</h4>
-                    <h4>Plus — 2000F</h4>
-                    <h4>Royale — 2500F</h4>
+                    <div class="price-buttons">
+                        <h4 data-variant="Classique" data-price="1000">Classique — 1000F</h4>
+                        <h4 data-variant="Standard" data-price="1500">Standard — 1500F</h4>
+                        <h4 data-variant="Plus" data-price="2000">Plus — 2000F</h4>
+                        <h4 data-variant="Royale" data-price="2500">Royale — 2500F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
+                <div class="menui" data-item-name="Chawarma Fromage">
                     <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Chawarma Fromage">
-                    <p><strong>Chawarma Frommage:</strong></p>
-                    <p>Viande de bœuf, frites, laitue,<br> frommage, sauce & piment</p>
-                    <h4>Fondant — 2000F</h4>
-                    <h4>Extra Fondant — 3000F</h4>
+                    <p><strong>Chawarma Fromage :</strong></p>
+                    <p>Viande de bœuf, frites, laitue,<br> fromage, sauce & piment</p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Fondant" data-price="2000">Fondant — 2000F</h4>
+                        <h4 data-variant="Extra Fondant" data-price="3000">Extra Fondant — 3000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
+                <div class="menui" data-item-name="Chawarma Saucisson">
                     <img src="images/WhatsApp Image 2026-03-04 at 11.15.40.jpeg" alt="Chawarma saucisson">
-                    <p><strong>Chawarma Saucisson:</strong></p>
+                    <p><strong>Chawarma Saucisson :</strong></p>
                     <p>Viande de bœuf, frites, laitue,<br>saucisson, sauce & piment</p>
-                    <h4>Standard — 2000F</h4>
-                    <h4>Plus — 3000F</h4>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="2000">Standard — 2000F</h4>
+                        <h4 data-variant="Plus" data-price="3000">Plus — 3000F</h4>
+                    </div>
                 </div>
 
-
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 15.28.59 (1).jpeg" alt="Chawarma saucisson,frommage">
-                    <p><strong>Chawarma Frommage Saucisson:</strong></p>
-                    <p>Viande de bœuf, frites, laitue,<br> fromage,saucisson, sauce & piment</p>
-                    <h4>Gourmet — 2500F</h4>
-                    <h4>Suprême — 3500F</h4>
+                <div class="menui" data-item-name="Chawarma Fromage Saucisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 15.28.59 (1).jpeg" alt="Chawarma fromage saucisson">
+                    <p><strong>Chawarma Fromage Saucisson :</strong></p>
+                    <p>Viande de bœuf, frites, laitue,<br> fromage, saucisson, sauce & piment</p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Gourmet" data-price="2500">Gourmet — 2500F</h4>
+                        <h4 data-variant="Suprême" data-price="3500">Suprême — 3500F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
+                <div class="menui" data-item-name="Bol de Frites">
                     <img src="images/WhatsApp Image 2026-03-04 at 11.15.36 (1).jpeg" alt="Bol de Frites">
-                    <p><strong>Bol de Frites:</strong></p>
-                    <p>frites,viande hachee, saucisson,<br>fromage,ketchup,sauce & piment</p>
-                    <h4>1 bol de frites — 3000F</h4>
-                    <h4>3 bols de frites — 8000F </h4>
+                    <p><strong>Bol de Frites :</strong></p>
+                    <p>frites, viande hachée, saucisson,<br>fromage, ketchup, sauce & piment</p>
+                    <div class="price-buttons">
+                        <h4 data-variant="1 bol" data-price="3500">1 bol de frites — 3500F</h4>
+                        <h4 data-variant="3 bols" data-price="10000">3 bols de frites — 10000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
+                <div class="menui" data-item-name="Pack Chawarma1">
                     <img src="images/WhatsApp Image 2026-03-04 at 11.15.36 copy.jpeg" alt="Pack Chawarma">
-                    <p><strong>Pack Chawarma1:</strong></p>
-                    <p>Chawarma + frites,ketchup,<br>sauce + jus/boisson/yaourt</p>
-                    <h4>Pack Simple — 3500F</h4>
-                    <h4>Pack Royal (2 jus/ <br> 1pot de yaourt) — 5500F</h4>
+                    <p><strong>Pack Chawarma1 :</strong></p>
+                    <p>Chawarma + frites, ketchup,<br>sauce + jus/boisson/yaourt</p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Pack Simple" data-price="3500">Pack Simple — 3500F</h4>
+                        <h4 data-variant="Pack Royal" data-price="5500">Pack Royal (2 jus/1 yaourt) — 5500F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
+                <div class="menui" data-item-name="Pack Chawarma2">
                     <img src="images/WhatsApp Image 2026-03-04 at 11.15.36 (1).jpeg" alt="Pack Chawarma & frites">
-                    <p><strong>Pack Chawarma2:</strong></p>
+                    <p><strong>Pack Chawarma2 :</strong></p>
                     <p>Chawarma + Bol de frites + <br> jus/boisson/yaourt</p>
-                    <h4>1 pack — 5000F</h4>
-                    <h4>2 pack — 9500F</h4>
-                </div>
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="">
-                    <p><strong> Sandwich au boeuf:</strong></p>
-                    <h4>Standard — 500F</h4>
-                    <h4>Plus — 1000F</h4>
-                    <h4>Royale — 2000F</h4>
+                    <div class="price-buttons">
+                        <h4 data-variant="1 pack" data-price="5000">1 pack — 5000F</h4>
+                        <h4 data-variant="2 packs" data-price="9500">2 packs — 9500F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="">
-                    <p><strong> Sandwich au poisson:</strong></p>
-                    <h4>Standard — 500F</h4>
-                    <h4>Plus — 1000F</h4>
-                    <h4>Royale — 2000F</h4>
+                <div class="menui" data-item-name="Sandwich au boeuf">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Sandwich boeuf">
+                    <p><strong>Sandwich au bœuf :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="500">Standard — 500F</h4>
+                        <h4 data-variant="Plus" data-price="1000">Plus — 1000F</h4>
+                        <h4 data-variant="Royale" data-price="2000">Royale — 2000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="">
-                    <p><strong>Sandwich au bœuf & saucisson:</strong></p>
-                    <h4>Standard — 1500F</h4>
-                    <h4>Plus — 2500F</h4>
+                <div class="menui" data-item-name="Sandwich au poisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Sandwich poisson">
+                    <p><strong>Sandwich au poisson :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="500">Standard — 500F</h4>
+                        <h4 data-variant="Plus" data-price="1000">Plus — 1000F</h4>
+                        <h4 data-variant="Royale" data-price="2000">Royale — 2000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="">
-                    <p><strong>Sandwich au poisson & saucisson:</strong></p>
-                    <h4>Standard — 1500F</h4>
-                    <h4>Plus — 2500F</h4>
-                    
+                <div class="menui" data-item-name="Sandwich au boeuf et saucisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Sandwich boeuf saucisson">
+                    <p><strong>Sandwich au bœuf & saucisson :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="1500">Standard — 1500F</h4>
+                        <h4 data-variant="Plus" data-price="2500">Plus — 2500F</h4>
+                    </div>
                 </div>
 
+                <div class="menui" data-item-name="Sandwich au poisson et saucisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="Sandwich poisson saucisson">
+                    <p><strong>Sandwich au poisson & saucisson :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="1500">Standard — 1500F</h4>
+                        <h4 data-variant="Plus" data-price="2500">Plus — 2500F</h4>
+                    </div>
+                </div>
             </div>
         </div>
 
-
+        <!-- Catégorie Plats locaux -->
         <div class="menu-category">
             <h2 class="titrerepas">Plats locaux</h2>
-
             <div class="menu-grid">
-
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="">
+                <div class="menui" data-item-name="Attieke-Alloco et poisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Attiéké poisson">
                     <p><strong>Attiéké-Alloco & poisson</strong></p>
-                    <h4>Standard — 700F</h4>
-                    <h4>Plus — 1200F</h4>
-                    <h4>Royale — 2000F</h4>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="700">Standard — 700F</h4>
+                        <h4 data-variant="Plus" data-price="1200">Plus — 1200F</h4>
+                        <h4 data-variant="Royale" data-price="2000">Royale — 2000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="">
+                <div class="menui" data-item-name="Attieke-Alloco et viande">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="Attiéké viande">
                     <p><strong>Attiéké-Alloco & viande</strong></p>
-                    <h4>Standard — 900F</h4>
-                    <h4>Plus — 1500F</h4>
-                    <h4>Royale — 2000F</h4>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="900">Standard — 900F</h4>
+                        <h4 data-variant="Plus" data-price="1500">Plus — 1500F</h4>
+                        <h4 data-variant="Royale" data-price="2000">Royale — 2000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="">
-                    <p><strong>Riz au gras & poisson:</strong></p>
-                    <h4>Standard — 600F</h4>
-                    <h4>Plus — 1000F</h4>
-                    <h4>Royale — 1500F</h4>
+                <div class="menui" data-item-name="Riz au gras et poisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="Riz gras poisson">
+                    <p><strong>Riz au gras & poisson :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="600">Standard — 600F</h4>
+                        <h4 data-variant="Plus" data-price="1000">Plus — 1000F</h4>
+                        <h4 data-variant="Royale" data-price="1500">Royale — 1500F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="">
-                    <p><strong>Riz au gras & viande:</strong></p>
-                    <h4>Standard — 900F</h4>
-                    <h4>Plus — 1500F</h4>
-                    <h4>Royale — 2000F</h4>
+                <div class="menui" data-item-name="Riz au gras et viande">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="Riz gras viande">
+                    <p><strong>Riz au gras & viande :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="900">Standard — 900F</h4>
+                        <h4 data-variant="Plus" data-price="1500">Plus — 1500F</h4>
+                        <h4 data-variant="Royale" data-price="2000">Royale — 2000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="">
-                    <p><strong>Atassi & Poisson:</strong></p>
-                    <h4>Standard — 600F</h4>
-                    <h4>Plus — 1000F</h4>
-                    <h4>Royale — 1500F</h4>
+                <div class="menui" data-item-name="Atassi et Poisson">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Atassi poisson">
+                    <p><strong>Atassi & Poisson :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="600">Standard — 600F</h4>
+                        <h4 data-variant="Plus" data-price="1000">Plus — 1000F</h4>
+                        <h4 data-variant="Royale" data-price="1500">Royale — 1500F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="">
-                    <p><strong>Atassi & viande:</strong></p>
-                    <h4> 900F - 1500F - 2000F </h4>
-                    <h4>Standard — 900F</h4>
-                    <h4>Plus — 1500F</h4>
-                    <h4>Royale — 2000F</h4>
+                <div class="menui" data-item-name="Atassi et viande">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Atassi viande">
+                    <p><strong>Atassi & viande :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Standard" data-price="900">Standard — 900F</h4>
+                        <h4 data-variant="Plus" data-price="1500">Plus — 1500F</h4>
+                        <h4 data-variant="Royale" data-price="2000">Royale — 2000F</h4>
+                    </div>
                 </div>
-
-
-
             </div>
         </div>
 
-
+        <!-- Catégorie Rafraîchissements -->
         <div class="menu-category">
-            <h2 class="titrerepas">Raffraichissements</h2>
-
+            <h2 class="titrerepas">Rafraîchissements</h2>
             <div class="menu-grid">
-
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="">
-                    <p><strong>Yaourt:</strong></p>
-                    <h4>  500F</h4>
-                    <h4> 1000F</h4>
+                <div class="menui" data-item-name="Yaourt">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Yaourt">
+                    <p><strong>Yaourt :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Petit" data-price="500">500F</h4>
+                        <h4 data-variant="Grand" data-price="1000">1000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="">
-                    <p><strong>Yaourt & dêguê:</strong></p>
-                    <h4>  500F</h4>
-                    <h4> 1000F</h4>
+                <div class="menui" data-item-name="Yaourt et degue">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Yaourt degue">
+                    <p><strong>Yaourt & dêguê :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Normal" data-price="500">500F</h4>
+                        <h4 data-variant="Maxi" data-price="1000">1000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="">
-                    <p><strong>Yaourt & couscous:</strong></p>
-                   <h4>  500F</h4>
-                   <h4> 1000F</h4>
+                <div class="menui" data-item-name="Yaourt et couscous">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Yaourt couscous">
+                    <p><strong>Yaourt & couscous :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Petit" data-price="500">500F</h4>
+                        <h4 data-variant="Grand" data-price="1000">1000F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="">
-                    <p><strong>Café au lait:</strong></p>
-                    <h4> 200F</h4>
+                <div class="menui" data-item-name="Cafe au lait">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Café au lait">
+                    <p><strong>Café au lait :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Tasse" data-price="200">200F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.36 copy.jpeg" alt="">
-                    <p><strong>jus de bissap:</strong></p>
-                    <h4> 100F</h4>
-                    <h4> 200F</h4>
-                    
+                <div class="menui" data-item-name="Jus de bissap">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.36 copy.jpeg" alt="Bissap">
+                    <p><strong>Jus de bissap :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Petit" data-price="100">100F</h4>
+                        <h4 data-variant="Grand" data-price="200">200F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="">
-                    <p><strong>jus d ananas:</strong></p>
-                    <h4> 200F</h4>
-                    <h4> 300F</h4>
+                <div class="menui" data-item-name="Jus d ananas">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39 (2).jpeg" alt="Ananas">
+                    <p><strong>Jus d'ananas :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Moyen" data-price="200">200F</h4>
+                        <h4 data-variant="Grand" data-price="300">300F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="">
-                    <p><strong>jus de citron:</strong></p>
-                    <h4> 100F</h4>
-                    <h4> 200F</h4>
+                <div class="menui" data-item-name="Jus de citron">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.38 (2).jpeg" alt="Citron">
+                    <p><strong>Jus de citron :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Petit" data-price="100">100F</h4>
+                        <h4 data-variant="Grand" data-price="200">200F</h4>
+                    </div>
                 </div>
 
-                <div class="menui">
-                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="">
-                    <p><strong>jus de Tamarin:</strong></p>
-                    <h4> 100F</h4>
-                    <h4> 200F</h4>
+                <div class="menui" data-item-name="Jus de Tamarin">
+                    <img src="images/WhatsApp Image 2026-03-04 at 11.15.39.jpeg" alt="Tamarin">
+                    <p><strong>Jus de Tamarin :</strong></p>
+                    <div class="price-buttons">
+                        <h4 data-variant="Petit" data-price="100">100F</h4>
+                        <h4 data-variant="Grand" data-price="200">200F</h4>
+                    </div>
                 </div>
-
-
             </div>
         </div>
-
-        
-
     </section>
 
-     <div>
+    <div>
         <a class="btn" href="https://wa.me/2290146850585" target="_blank"><strong>Commander Maintenant</strong></a>
-     </div>
-
-    
-
+    </div>
 
     <section id="localisation">
         <h2>Localisation</h2>
-
-        
-
         <section class="info-localisation">
-
-            <p>
-                Nous sommes situee a Cotonou-Aibatin  dans la von de la stion JNP en face de l ancien hotel akuaba. <br>
-                Une fois de la von de la station JNP,passez dans la 1 iere rue a droite tout droit.
-            </p>
+            <p>Nous disposons également d'un stand situé à Cotonou, dans le quartier Aïbatin, sur la voie de la station JNP, en face de l'ancien hôtel Akwaba.<br>
+            En venant du carrefour du marché Adjahá et en empruntant la voie de l'ancien pavé, entrez dans la voie de la station JNP, puis prenez la première rue à droite et continuez tout droit.<br>
+            Pour plus de facilité, vous pouvez consulter notre localisation sur Google Maps juste après la photo du stand.</p>
         </section>
-        
-
-        <!-- PHOTO -->
         <section class="photo-localisation">
             <img src="images/victoria-shes-UC0HZdUitWY-unsplash (2).jpg" alt="Entrée du restaurant">
         </section>
-
-
         <section class="map">
-            <iframe src="https://maps.google.com/?q=6.361439,2.378337" width="50%" height="100" style="border:0;"
-                allowfullscreen="" loading="lazy">
-            </iframe>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.581!2d2.4179!3d6.3675!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNsKwMjInMDMuMCJOIDLCsDI1JzA0LjQiRQ!5e0!3m2!1sfr!2sbj!4v1640000000000!5m2!1sfr!2sbj" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </section>
+        <a href="https://maps.google.com" target="_blank" class="btn-map">Suivre le trajet avec Google Maps</a>
+    </section>
 
-        <footer>
-                    <section class="contact">
+    <footer>
+        <section class="contact">
             <h2><strong>Contacts</strong></h2>
             <div class="contact-container">
-
                 <div class="contacti">
                     <i class="fa-solid fa-phone"></i>
                     <p>(229)0146850585</p>
                 </div>
-
                 <div class="contacti">
                     <i class="fa-brands fa-whatsapp"></i>
                     <p>(229)0146850585</p>
                 </div>
-
                 <div class="contacti">
                     <i class="fa-brands fa-tiktok"></i>
-                    <p> Mosaikdelices</p>
+                    <p>Mosaikdelices</p>
                 </div>
-
                 <div class="contacti">
                     <i class="fa-brands fa-facebook"></i>
-                    <p> Mosaïk Délices</p>
+                    <p>Mosaïk Délices</p>
                 </div>
-
             </div>
-
-
         </section>
-            <h2><strong>Horaires </strong></h2>
-            <p>Lundi - Samedi : 9h - 22h</p>
-            <p class="slg"><strong>Rassurez-vous! <br> Chez Mosaik Delices,le gout est authentique!</strong></p>
-            <div>
-            <p class="jt">© 2026 Mozaïk Délices – Tous droits réservés.</p>
-            </div>
+        <h2><strong>Horaires</strong></h2>
+        <p>Lundi - Jeudi - Samedi: 9h - 22h</p>
+        <p>Mardi - Mercredi - Vendredi: 18h - 22h</p>
+        <p>Dimanche: 11h - 22h</p>
+        <p class="slg"><strong>Rassurez-vous! <br> Chez Mosaik Delices, le goût est authentique!</strong></p>
+        <p class="jt">© 2026 Mosaïk Délices – Tous droits réservés.</p>
+    </footer>
 
-        </footer>
+    <script>
+        (function() {
+            // ========== PANIER ==========
+            let cart = JSON.parse(localStorage.getItem('mosaik_cart')) || [];
 
+            // Injection HTML panier flottant
+            const cartUI = `
+                <div id="cart-icon" style="position:fixed; bottom:30px; right:30px; background:#ff9800; color:white; width:60px; height:60px; border-radius:50%; display:flex; justify-content:center; align-items:center; font-size:24px; cursor:pointer; z-index:1000; box-shadow:0 4px 12px rgba(0,0,0,0.3); transition:transform 0.2s;">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    <span id="cart-count" style="position:absolute; top:-5px; right:-5px; background:#e63946; color:white; border-radius:50%; padding:2px 8px; font-size:13px; font-weight:bold; display:none;">0</span>
+                </div>
+                <div id="cart-modal" style="display:none; position:fixed; top:0; right:0; width:380px; max-width:100%; height:100%; background:white; box-shadow:-5px 0 20px rgba(0,0,0,0.2); z-index:1001; padding:20px; box-sizing:border-box; flex-direction:column; font-family:sans-serif;">
+                    <div style="display:flex; justify-content:space-between; border-bottom:2px solid #eee; padding-bottom:12px;">
+                        <h2 style="margin:0;">🛒 Panier</h2>
+                        <span onclick="window.toggleCartModal()" style="cursor:pointer; font-size:32px;">&times;</span>
+                    </div>
+                    <div id="cart-items-list" style="flex:1; overflow-y:auto; margin:20px 0;"></div>
+                    <div style="border-top:1px solid #ddd; padding-top:15px;">
+                        <h3>Total : <span id="cart-total-amount" style="color:#ff9800;">0</span> FCFA</h3>
+                        <button id="checkoutWaBtn" style="width:100%; background:#25D366; color:white; border:none; padding:14px; border-radius:40px; font-weight:bold; margin-top:10px; cursor:pointer;"><i class="fa-brands fa-whatsapp"></i> Commander via WhatsApp</button>
+                    </div>
+                </div>
+            `;
+            document.body.insertAdjacentHTML('beforeend', cartUI);
 
+            window.toggleCartModal = function() {
+                const modal = document.getElementById('cart-modal');
+                modal.style.display = modal.style.display === 'none' ? 'flex' : 'none';
+            };
+            document.getElementById('cart-icon').onclick = () => window.toggleCartModal();
+
+            window.addToCartAndTransform = function(btnElement, productFullName, price) {
+                const existing = cart.find(i => i.name === productFullName);
+                if (existing) existing.quantity++;
+                else cart.push({ name: productFullName, price: price, quantity: 1 });
+                saveAndRenderCart();
+
+                btnElement.innerHTML = '<i class="fa-solid fa-check"></i> Validé';
+                btnElement.classList.add('validated');
+                btnElement.style.background = '#2e7d32';
+                
+                const iconCart = document.getElementById('cart-icon');
+                iconCart.style.transform = 'scale(1.2)';
+                setTimeout(() => iconCart.style.transform = '', 200);
+            };
+
+            function saveAndRenderCart() {
+                localStorage.setItem('mosaik_cart', JSON.stringify(cart));
+                const totalQty = cart.reduce((s, i) => s + i.quantity, 0);
+                const countSpan = document.getElementById('cart-count');
+                countSpan.innerText = totalQty;
+                countSpan.style.display = totalQty > 0 ? 'inline-block' : 'none';
+                const totalPrice = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
+                document.getElementById('cart-total-amount').innerText = totalPrice.toLocaleString('fr-FR');
+                const container = document.getElementById('cart-items-list');
+                if (!cart.length) {
+                    container.innerHTML = '<p style="text-align:center; color:#888;">Panier vide</p>';
+                    return;
+                }
+                container.innerHTML = '';
+                cart.forEach((item, index) => {
+                    const div = document.createElement('div');
+                    div.style.display = 'flex';
+                    div.style.justifyContent = 'space-between';
+                    div.style.alignItems = 'center';
+                    div.style.marginBottom = '12px';
+                    div.style.borderBottom = '1px solid #f0f0f0';
+                    div.style.paddingBottom = '8px';
+                    
+                    // Utiliser un ID unique ou l'index pour éviter les problèmes d'apostrophe
+                    const safeName = item.name.replace(/'/g, "\\'");
+                    
+                    div.innerHTML = `
+                        <div><strong>${item.name.replace(/'/g, "&#39;")}</strong><br><span style="font-size:13px; color:#ff9800;">${item.price} FCFA</span></div>
+                        <div style="display:flex; align-items:center; gap:8px;">
+                            <button class="qty-minus" data-index="${index}" style="background:#eee; border:none; width:28px; border-radius:20px; cursor:pointer;">-</button>
+                            <span>${item.quantity}</span>
+                            <button class="qty-plus" data-index="${index}" style="background:#eee; border:none; width:28px; border-radius:20px; cursor:pointer;">+</button>
+                        </div>
+                    `;
+                    container.appendChild(div);
+                });
+                
+                // Utiliser les indices au lieu des noms pour éviter les problèmes d'échappement
+                document.querySelectorAll('.qty-minus').forEach(btn => {
+                    btn.onclick = () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        if (!isNaN(idx) && cart[idx]) {
+                            cart[idx].quantity--;
+                            if (cart[idx].quantity <= 0) {
+                                cart.splice(idx, 1);
+                            }
+                            saveAndRenderCart();
+                        }
+                    };
+                });
+                
+                document.querySelectorAll('.qty-plus').forEach(btn => {
+                    btn.onclick = () => {
+                        const idx = parseInt(btn.getAttribute('data-index'));
+                        if (!isNaN(idx) && cart[idx]) {
+                            cart[idx].quantity++;
+                            saveAndRenderCart();
+                        }
+                    };
+                });
+            }
+
+            document.getElementById('checkoutWaBtn').addEventListener('click', () => {
+                if (!cart.length) { alert("Votre panier est vide."); return; }
+                let msg = "Bonjour Mosaik Délices, je souhaite commander :%0A";
+                cart.forEach(i => msg += `▪️ ${i.quantity}x ${i.name} → ${(i.price * i.quantity)} FCFA%0A`);
+                const total = cart.reduce((s,i) => s + i.price * i.quantity, 0);
+                msg += `%0A*Total : ${total.toLocaleString('fr-FR')} FCFA*%0AMerci !`;
+                window.open(`https://wa.me/2290146850585?text=${msg}`, '_blank');
+            });
+
+            function initAddButtons() {
+                const allPriceContainers = document.querySelectorAll('.price-buttons');
+                allPriceContainers.forEach(container => {
+                    const parentMenuItem = container.closest('.menui');
+                    if (!parentMenuItem) return;
+                    const baseName = parentMenuItem.getAttribute('data-item-name') || 
+                                     parentMenuItem.querySelector('strong')?.innerText.replace(':', '').trim() || "Plat";
+                    const priceElements = container.querySelectorAll('h4');
+                    priceElements.forEach(el => {
+                        let variant = el.getAttribute('data-variant');
+                        let price = parseInt(el.getAttribute('data-price'));
+                        if (!price) {
+                            const raw = el.innerText;
+                            const match = raw.match(/(\d+)/);
+                            if (match) price = parseInt(match[0]);
+                        }
+                        if (!variant) {
+                            const textVar = el.innerText.split(/[-—]/)[0].trim();
+                            variant = textVar || "Classique";
+                        }
+                        if (!price) return;
+                        const fullProductName = `${baseName} - ${variant}`;
+                        if (el.querySelector('.btn-add')) return;
+                        const btn = document.createElement('button');
+                        btn.className = 'btn-add';
+                        btn.innerHTML = '<i class="fa-solid fa-plus"></i> Ajouter';
+                        btn.style.marginLeft = '12px';
+                        btn.style.background = '#ff9800';
+                        btn.style.color = 'white';
+                        btn.style.border = 'none';
+                        btn.style.borderRadius = '30px';
+                        btn.style.padding = '6px 14px';
+                        btn.style.fontSize = '12px';
+                        btn.style.fontWeight = 'bold';
+                        btn.style.cursor = 'pointer';
+                        btn.style.transition = 'all 0.2s ease';
+                        btn.onclick = (e) => {
+                            e.stopPropagation();
+                            window.addToCartAndTransform(btn, fullProductName, price);
+                        };
+                        el.appendChild(btn);
+                    });
+                });
+            }g
+
+            saveAndRenderCart();
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', initAddButtons);
+            } else {
+                initAddButtons();
+            }
+        })();
+    </script>
 </body>
+
+</html>
