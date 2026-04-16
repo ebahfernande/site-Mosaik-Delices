@@ -369,19 +369,66 @@
 
             window.toggleCartModal = function() {
                 const modal = document.getElementById('cart-modal');
-                modal.style.display = modal.style.display === 'none' ? 'flex' : 'none';
+                if (modal.style.display === 'none' || modal.style.display === '') {
+                    modal.style.display = 'flex';
+                } else {
+                    modal.style.display = 'none';
+                }
             };
             document.getElementById('cart-icon').onclick = () => window.toggleCartModal();
 
+            // Fonction pour réinitialiser un bouton spécifique
+            function resetButtonForProduct(productFullName) {
+                const allButtons = document.querySelectorAll('.btn-add');
+                for (let btn of allButtons) {
+                    if (btn.getAttribute('data-product-name') === productFullName) {
+                        btn.innerHTML = '<i class="fa-solid fa-plus"></i> Ajouter';
+                        btn.classList.remove('validated');
+                        btn.style.background = '#ff9800';
+                        break;
+                    }
+                }
+            }
+
+            // Fonction pour réinitialiser TOUS les boutons
+            function resetAllButtons() {
+                const allButtons = document.querySelectorAll('.btn-add');
+                allButtons.forEach(btn => {
+                    btn.innerHTML = '<i class="fa-solid fa-plus"></i> Ajouter';
+                    btn.classList.remove('validated');
+                    btn.style.background = '#ff9800';
+                });
+            }
+
+            // Fonction pour mettre à jour le compteur du panier
+            function updateCartCounter() {
+                const totalQty = cart.reduce((s, i) => s + i.quantity, 0);
+                const countSpan = document.getElementById('cart-count');
+                if (countSpan) {
+                    countSpan.innerText = totalQty;
+                    countSpan.style.display = totalQty > 0 ? 'inline-block' : 'none';
+                }
+                const totalPrice = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
+                const totalSpan = document.getElementById('cart-total-amount');
+                if (totalSpan) {
+                    totalSpan.innerText = totalPrice.toLocaleString('fr-FR');
+                }
+            }
+
             window.addToCartAndTransform = function(btnElement, productFullName, price) {
                 const existing = cart.find(i => i.name === productFullName);
-                if (existing) existing.quantity++;
-                else cart.push({ name: productFullName, price: price, quantity: 1 });
+                if (existing) {
+                    existing.quantity++;
+                } else {
+                    cart.push({ name: productFullName, price: price, quantity: 1 });
+                }
                 saveAndRenderCart();
-
+                
+                // Marquer ce bouton comme validé
                 btnElement.innerHTML = '<i class="fa-solid fa-check"></i> Validé';
                 btnElement.classList.add('validated');
                 btnElement.style.background = '#2e7d32';
+                btnElement.setAttribute('data-product-name', productFullName);
                 
                 const iconCart = document.getElementById('cart-icon');
                 iconCart.style.transform = 'scale(1.2)';
@@ -389,18 +436,24 @@
             };
 
             function saveAndRenderCart() {
+                // Sauvegarder dans localStorage
                 localStorage.setItem('mosaik_cart', JSON.stringify(cart));
-                const totalQty = cart.reduce((s, i) => s + i.quantity, 0);
-                const countSpan = document.getElementById('cart-count');
-                countSpan.innerText = totalQty;
-                countSpan.style.display = totalQty > 0 ? 'inline-block' : 'none';
-                const totalPrice = cart.reduce((s, i) => s + (i.price * i.quantity), 0);
-                document.getElementById('cart-total-amount').innerText = totalPrice.toLocaleString('fr-FR');
+                
+                // Mettre à jour le compteur et le total
+                updateCartCounter();
+                
                 const container = document.getElementById('cart-items-list');
+                if (!container) return;
+                
+                // Si le panier est vide
                 if (!cart.length) {
                     container.innerHTML = '<p style="text-align:center; color:#888;">Panier vide</p>';
+                    // Réinitialiser TOUS les boutons
+                    resetAllButtons();
                     return;
                 }
+                
+                // Afficher les articles du panier
                 container.innerHTML = '';
                 cart.forEach((item, index) => {
                     const div = document.createElement('div');
@@ -410,9 +463,6 @@
                     div.style.marginBottom = '12px';
                     div.style.borderBottom = '1px solid #f0f0f0';
                     div.style.paddingBottom = '8px';
-                    
-                    // Utiliser un ID unique ou l'index pour éviter les problèmes d'apostrophe
-                    const safeName = item.name.replace(/'/g, "\\'");
                     
                     div.innerHTML = `
                         <div><strong>${item.name.replace(/'/g, "&#39;")}</strong><br><span style="font-size:13px; color:#ff9800;">${item.price} FCFA</span></div>
@@ -425,14 +475,17 @@
                     container.appendChild(div);
                 });
                 
-                // Utiliser les indices au lieu des noms pour éviter les problèmes d'échappement
+                // Gérer les boutons + et - du panier
                 document.querySelectorAll('.qty-minus').forEach(btn => {
                     btn.onclick = () => {
                         const idx = parseInt(btn.getAttribute('data-index'));
                         if (!isNaN(idx) && cart[idx]) {
                             cart[idx].quantity--;
                             if (cart[idx].quantity <= 0) {
+                                const removedItemName = cart[idx].name;
                                 cart.splice(idx, 1);
+                                // Réinitialiser le bouton du produit supprimé
+                                resetButtonForProduct(removedItemName);
                             }
                             saveAndRenderCart();
                         }
@@ -451,11 +504,14 @@
             }
 
             document.getElementById('checkoutWaBtn').addEventListener('click', () => {
-                if (!cart.length) { alert("Votre panier est vide."); return; }
+                if (!cart.length) { 
+                    alert("Votre panier est vide."); 
+                    return; 
+                }
                 let msg = "Bonjour Mosaik Délices, je souhaite commander :%0A";
                 cart.forEach(i => msg += `▪️ ${i.quantity}x ${i.name} → ${(i.price * i.quantity)} FCFA%0A`);
                 const total = cart.reduce((s,i) => s + i.price * i.quantity, 0);
-                msg += `%0A*Total : ${total.toLocaleString('fr-FR')} FCFA*%0AMerci !`;
+                msg += `%0A*Total : ${total.toLocaleString('fr-FR')} FCFA*%0AJe suis en attente de comfirmation. Merci !`;
                 window.open(`https://wa.me/2290146850585?text=${msg}`, '_blank');
             });
 
@@ -495,6 +551,7 @@
                         btn.style.fontWeight = 'bold';
                         btn.style.cursor = 'pointer';
                         btn.style.transition = 'all 0.2s ease';
+                        btn.setAttribute('data-product-name', fullProductName);
                         btn.onclick = (e) => {
                             e.stopPropagation();
                             window.addToCartAndTransform(btn, fullProductName, price);
@@ -502,16 +559,35 @@
                         el.appendChild(btn);
                     });
                 });
-            }g
+            }
+
+            // Vérifier et restaurer l'état des boutons au chargement
+            function restoreButtonsState() {
+                const allButtons = document.querySelectorAll('.btn-add');
+                allButtons.forEach(btn => {
+                    const productName = btn.getAttribute('data-product-name');
+                    if (productName && cart.some(item => item.name === productName)) {
+                        btn.innerHTML = '<i class="fa-solid fa-check"></i> Validé';
+                        btn.style.background = '#2e7d32';
+                    }
+                });
+            }
 
             saveAndRenderCart();
             if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initAddButtons);
+                document.addEventListener('DOMContentLoaded', () => {
+                    initAddButtons();
+                    restoreButtonsState();
+                });
             } else {
                 initAddButtons();
+                restoreButtonsState();
             }
         })();
     </script>
+          
+                          
+                       
 </body>
 
 </html>
