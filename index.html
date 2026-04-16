@@ -293,7 +293,7 @@
     </section>
 
     <div>
-        <a class="btn" href="https://wa.me/2290146850585" target="_blank"><strong>Commander Maintenant</strong></a>
+    <a class="btn" id="commanderBtn" href="#" target="_blank"><strong>Commander Maintenant</strong></a>
     </div>
 
     <section id="localisation">
@@ -583,6 +583,22 @@
                 initAddButtons();
                 restoreButtonsState();
             }
+            // Bouton "Commander Maintenant" qui envoie le contenu du panier
+document.getElementById('commanderBtn').addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    if (!cart.length) { 
+        alert("Votre panier est vide. Ajoutez des articles avant de commander.");
+        return; 
+    }
+    
+    let msg = "Bonjour Mosaik Délices, je souhaite commander :%0A%0A";
+    cart.forEach(i => msg += `🍽️ ${i.quantity}x ${i.name} → ${(i.price * i.quantity)} FCFA%0A`);
+    const total = cart.reduce((s,i) => s + i.price * i.quantity, 0);
+    msg += `%0A📋 *TOTAL : ${total.toLocaleString('fr-FR')} FCFA*%0A%0AJe suis en attente de comfirmation.  Merci !`;
+    
+    window.open(`https://wa.me/2290146850585?text=${msg}`, '_blank');
+});
         })();
     </script>
           
