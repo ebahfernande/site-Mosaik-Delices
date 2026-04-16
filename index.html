@@ -595,12 +595,162 @@ document.getElementById('commanderBtn').addEventListener('click', function(e) {
     let msg = "Bonjour Mosaik Délices, je souhaite commander :%0A%0A";
     cart.forEach(i => msg += `🍽️ ${i.quantity}x ${i.name} → ${(i.price * i.quantity)} FCFA%0A`);
     const total = cart.reduce((s,i) => s + i.price * i.quantity, 0);
-    msg += `%0A📋 *TOTAL : ${total.toLocaleString('fr-FR')} FCFA*%0A%0AJe suis en attente de comfirmation.  Merci !`;
+    msg += `%0A📋 *Total à payer: ${total.toLocaleString('fr-FR')} FCFA*%0A%0AJe suis en attente de comfirmation.  Merci !`;
     
     window.open(`https://wa.me/2290146850585?text=${msg}`, '_blank');
 });
         })();
     </script>
+    <script>
+// ========== RÉINITIALISATION AUTOMATIQUE APRÈS COMMANDE ==========
+(function autoResetAfterOrder() {
+    
+    const CART_KEY = 'mosaik_cart';
+    const ORDER_FLAG_KEY = 'mosaik_order_just_placed';
+    
+    // Fonction pour tout réinitialiser
+    function fullReset() {
+        // Vider le panier
+        localStorage.removeItem(CART_KEY);
+        // Supprimer le flag de commande
+        localStorage.removeItem(ORDER_FLAG_KEY);
+        // Recharger la page proprement
+        location.reload();
+    }
+    
+    // Marquer qu'une commande vient d'être passée
+    function markOrderPlaced() {
+        localStorage.setItem(ORDER_FLAG_KEY, 'true');
+        // Ne pas recharger tout de suite, laisser le temps d'aller sur WhatsApp
+        // Le rechargement se fera au retour
+    }
+    
+    // Vérifier si on revient d'une commande
+    function checkAndReset() {
+        const orderJustPlaced = localStorage.getItem(ORDER_FLAG_KEY);
+        if (orderJustPlaced === 'true') {
+            // On vide tout et on recharge
+            fullReset();
+        }
+    }
+    
+    // Intercepter TOUS les boutons qui envoient vers WhatsApp
+    function interceptAllOrderButtons() {
+        // Méthode 1: Intercepter tous les clics sur la page
+        document.body.addEventListener('click', function(e) {
+            // Chercher si l'élément cliqué ou son parent est un lien WhatsApp
+            let target = e.target;
+            let isWhatsAppLink = false;
+            
+            // Remonter jusqu'à trouver un lien ou un bouton
+            while(target && target !== document.body) {
+                // Vérifier si c'est un lien WhatsApp
+                if (target.tagName === 'A' && target.href && target.href.includes('wa.me')) {
+                    isWhatsAppLink = true;
+                    break;
+                }
+                // Vérifier si c'est un bouton de commande
+                if (target.id === 'checkoutWaBtn' || target.id === 'commanderBtn') {
+                    isWhatsAppLink = true;
+                    break;
+                }
+                // Vérifier par classe
+                if (target.classList && (target.classList.contains('btn') || target.classList.contains('btn-add'))) {
+                    // Vérifier si ce bouton est lié à une commande
+                    if (target.id === 'commanderBtn' || target.closest('#commanderBtn')) {
+                        isWhatsAppLink = true;
+                        break;
+                    }
+                }
+                target = target.parentElement;
+            }
+            
+            if (isWhatsAppLink) {
+                // Attendre que la redirection WhatsApp se fasse
+                setTimeout(function() {
+                    markOrderPlaced();
+                }, 500);
+            }
+        });
+        
+        // Méthode 2: Intercepter spécifiquement le bouton Commander du panier
+        const checkoutBtn = document.getElementById('checkoutWaBtn');
+        if (checkoutBtn) {
+            const originalClick = checkoutBtn.onclick;
+            checkoutBtn.addEventListener('click', function() {
+                setTimeout(function() {
+                    markOrderPlaced();
+                }, 500);
+            });
+        }
+        
+        // Méthode 3: Intercepter le bouton principal Commander Maintenant
+        const mainBtn = document.getElementById('commanderBtn');
+        if (mainBtn) {
+            mainBtn.addEventListener('click', function() {
+                setTimeout(function() {
+                    markOrderPlaced();
+                }, 500);
+            });
+        }
+        
+        // Méthode 4: Intercepter tous les liens WhatsApp existants
+        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+        whatsappLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                setTimeout(function() {
+                    markOrderPlaced();
+                }, 500);
+            });
+        });
+    }
+    
+    // Surveiller le retour sur la page (quand l'onglet redevient actif)
+    function monitorPageReturn() {
+        // Quand la page redevient visible
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                // La page est à nouveau visible
+                setTimeout(function() {
+                    checkAndReset();
+                }, 100);
+            }
+        });
+        
+        // Quand la page reçoit le focus
+        window.addEventListener('focus', function() {
+            setTimeout(function() {
+                checkAndReset();
+            }, 100);
+        });
+        
+        // Vérifier au chargement initial
+        window.addEventListener('load', function() {
+            checkAndReset();
+        });
+        
+        // Vérification périodique (au cas où)
+        setInterval(function() {
+            checkAndReset();
+        }, 1000);
+    }
+    
+    // Lancer l'interception
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            interceptAllOrderButtons();
+            monitorPageReturn();
+            checkAndReset();
+        });
+    } else {
+        interceptAllOrderButtons();
+        monitorPageReturn();
+        checkAndReset();
+    }
+    
+})();
+</script>
+    
           
                           
                        
