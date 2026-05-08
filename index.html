@@ -547,13 +547,13 @@
                     let nomPropre = item.name;
                     // Remplacer les caractères problématiques
                     nomPropre = nomPropre.replace(/&/g, 'et');
-                    nomPropre = nomPropre.replace(/\?/g, '');
+                    nomPropre = nomPropre.replace(/\?/g,  '');
                     nomPropre = nomPropre.replace(/=/g, '');
                     
-                    msg += `🍽️ ${item.quantity}x ${nomPropre} → ${prixTotal.toLocaleString('fr-FR')} FCFA\n`;
+                    msg += `- ${item.quantity}x ${nomPropre} → ${prixTotal.toLocaleString('fr-FR')} FCFA\n`;
                 }
                 
-                msg += `\n📋 Total à payer: ${totalGlobal.toLocaleString('fr-FR')} FCFA\n\n`;
+                msg += `\n 📋 Total à payer: ${totalGlobal.toLocaleString('fr-FR')} FCFA\n\n`;
                 msg += `Je suis en attente de confirmation. Merci !`;
                 
                 // Encoder correctement pour URL WhatsApp
